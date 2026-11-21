@@ -7,4 +7,5 @@ npm install --silent
 npm run build
 rm -rf ../assets ../shots
 cp -R ../dist/assets ../dist/shots ../dist/index.html ../dist/Shivam-Agarwal-Resume.pdf ..
+[ -f ../dist/portrait.png ] && cp ../dist/portrait.png .. || true
 echo "Site files updated in the repo root. Commit and push to publish."
