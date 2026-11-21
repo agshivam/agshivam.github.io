@@ -15,7 +15,7 @@ function Portrait() {
         (e.currentTarget.firstChild as HTMLElement).style.transform = `rotateY(${x * 14}deg) rotateX(${-y * 10}deg)`;
       }}
       onPointerLeave={(e) => { (e.currentTarget.firstChild as HTMLElement).style.transform = ""; }}>
-      <img src="portrait-v3.png" alt="Shivam Agarwal" onError={() => setFailed(true)} className="w-full h-auto block select-none"
+      <img src="portrait-v4.webp" alt="Shivam Agarwal" onError={() => setFailed(true)} className="w-full h-auto block select-none"
         style={{ transition: "transform .25s ease-out", filter: "drop-shadow(0 30px 40px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(120,130,255,.25))", transformStyle: "preserve-3d" }} draggable={false} />
     </div>
   );
@@ -39,7 +39,7 @@ export default function Hero() {
       </FadeIn>
       <div className="overflow-hidden">
         <FadeIn delay={0.15} y={40}>
-          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-center mt-6 sm:mt-4 md:-mt-5 text-[12vw] sm:[font-size:13vw] md:[font-size:14vw] lg:[font-size:14.6vw]">Hi, i&apos;m shivam</h1>
+          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-center mt-4 sm:mt-3 md:mt-0 text-[10.5vw] sm:[font-size:11vw] md:[font-size:10.5vw] lg:[font-size:10.5vw] !leading-[0.9]">Hi, i&apos;m<br />shivam agarwal</h1>
         </FadeIn>
       </div>
       <div className="flex-1" />
