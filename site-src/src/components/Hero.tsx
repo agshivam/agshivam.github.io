@@ -7,7 +7,18 @@ const links = [["About", "#about"], ["Services", "#services"], ["Projects", "#pr
 
 function Portrait() {
   const [failed, setFailed] = useState(false);
-  if (!failed) return <img src="portrait.png" alt="Shivam Agarwal" onError={() => setFailed(true)} className="w-full h-auto block select-none" draggable={false} />;
+  if (!failed) return (
+    <div style={{ perspective: 900 }} className="w-full"
+      onPointerMove={(e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        (e.currentTarget.firstChild as HTMLElement).style.transform = `rotateY(${x * 14}deg) rotateX(${-y * 10}deg)`;
+      }}
+      onPointerLeave={(e) => { (e.currentTarget.firstChild as HTMLElement).style.transform = ""; }}>
+      <img src="portrait.png" alt="Shivam Agarwal" onError={() => setFailed(true)} className="w-full h-auto block select-none"
+        style={{ transition: "transform .25s ease-out", filter: "drop-shadow(0 30px 40px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(120,130,255,.25))", transformStyle: "preserve-3d" }} draggable={false} />
+    </div>
+  );
   return (
     <div className="aspect-[4/5] w-full rounded-[40px] sm:rounded-[56px] flex items-end justify-center overflow-hidden" aria-label="Shivam Agarwal monogram"
       style={{ background: "linear-gradient(180deg, rgba(100,105,115,.35) 0%, rgba(187,204,215,.12) 100%)", border: "1px solid rgba(215,226,234,.25)" }}>
