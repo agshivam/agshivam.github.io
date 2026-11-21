@@ -4,21 +4,20 @@ import FadeIn from "./FadeIn";
 import { GhostButton } from "./Buttons";
 import content from "../content.json";
 
-const shotKeys = ["patient-360", "costlab", "chaos-proof-pipelines", "job-radar", "portable-data-platform", "patient-360-lakehouse"];
 const R = "rounded-[40px] sm:rounded-[50px] md:rounded-[60px]";
 type P = (typeof content.projects)[number];
 
 function Card({ p, i, total, progress }: { p: P; i: number; total: number; progress: MotionValue<number> }) {
   const target = 1 - (total - 1 - i) * 0.03;
   const scale = useTransform(progress, [i / total, 1], [1, target]);
-  const k = shotKeys[i];
+  const k = p.shot;
   const img = (n: number) => `shots/${k}-${n}.jpg`;
   return (
     <div className="h-[85vh] sm:h-[95vh]" style={{ position: "relative" }}>
       <motion.div className={`sticky top-24 md:top-32 ${R} border-2 border-[#D7E2EA] p-4 sm:p-6 md:p-8`} style={{ scale, background: "#0C0C0C", top: `calc(6rem + ${i * 28}px)`, transformOrigin: "top center" }}>
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4 sm:mb-6 md:mb-8">
           <div className="flex items-start gap-4 sm:gap-8">
-            <span className="font-black leading-none text-[#D7E2EA]" style={{ fontSize: "clamp(3rem, 10vw, 140px)" }}>0{i + 1}</span>
+            <span className="font-black leading-none text-[#D7E2EA]" style={{ fontSize: "clamp(3rem, 10vw, 140px)" }}>{String(i + 1).padStart(2, "0")}</span>
             <div className="flex flex-col gap-1 pt-1">
               <span className="font-light uppercase tracking-widest text-[#D7E2EA] opacity-70" style={{ fontSize: "clamp(0.75rem, 1.3vw, 1.1rem)" }}>{p.tag} · {p.status}</span>
               <h3 className="font-medium uppercase text-[#D7E2EA]" style={{ fontSize: "clamp(1.1rem, 2.4vw, 2.2rem)" }}>{p.title}</h3>

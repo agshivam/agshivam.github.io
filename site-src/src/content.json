@@ -1,239 +1,255 @@
 {
- "email": "agshivam201599@gmail.com",
- "wa": "https://wa.me/919872907228?text=Hi%20Shivam%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect.",
- "resume": "Shivam-Agarwal-Resume.pdf",
- "tools": [
-  {
-   "name": "Snowflake",
-   "lead": "Stored procedures, streams, tasks, MERGE-based incremental loads and SCD 1 and 2 history.",
-   "proof": "Near-real-time pipelines at about 6 million records per hour for Intelsat. Snowflake Core certified.",
-   "used": [
-    "Kipi.ai",
-    "V4C.ai",
-    "Kipi.bi",
-    "Intelsat",
-    "Myriad Genetics"
-   ]
-  },
-  {
-   "name": "dbt",
-   "lead": "Reusable models and macros, team standards, code reviews and CI checks on every change.",
-   "proof": "Set the dbt development standards for the team at Kipi.bi. dbt Fundamentals certified.",
-   "used": [
-    "Kipi.bi",
-    "Myriad Genetics",
-    "Intelsat"
-   ]
-  },
-  {
-   "name": "Fivetran",
-   "lead": "Automated ingestion from databases, SaaS platforms and MongoDB, replacing manual loads.",
-   "proof": "Automated SaaS and MongoDB ingestion for Vena Health. Fivetran Technical certified.",
-   "used": [
-    "Kipi.bi",
-    "Vena Health"
-   ]
-  },
-  {
-   "name": "Python and Airflow",
-   "lead": "API ingestion, Snowpark, Lambda connectors and scheduled orchestration with CI/CD.",
-   "proof": "Introduced CI/CD for dbt, Airflow and Python on the Intelsat platform.",
-   "used": [
-    "Kipi.bi",
-    "Intelsat",
-    "Vena Health"
-   ]
-  },
-  {
-   "name": "AWS and Azure",
-   "lead": "S3, Lambda and Redshift on AWS, and Azure Data Lake Storage for lake-based pipelines.",
-   "proof": "Built ETL for the Johnson & Johnson APAC data lake migration.",
-   "used": [
-    "Capgemini",
-    "Johnson & Johnson",
-    "Kipi.bi"
-   ]
-  },
-  {
-   "name": "Data quality",
-   "lead": "Source-to-target reconciliation, lineage and dependency analysis, and root-cause work on defects.",
-   "proof": "Built SQL checks across sources, warehouse layers, marts and Tableau dashboards.",
-   "used": [
-    "Kipi.ai",
-    "KetteQ"
-   ]
-  }
- ],
- "roles": [
-  {
-   "dates": "Jan 2026 to now",
-   "title": "Senior Data Engineer",
-   "company": "Kipi.ai, for client GoHealth, remote",
-   "points": [
-    "Maintain the Snowflake pipelines behind analytics and enterprise reporting.",
-    "Harmonize data from several source systems into one consistent model.",
-    "Built SQL reconciliation that finds duplicates and mismatches across sources, warehouse layers, marts and Tableau dashboards.",
-    "Added REST API sources with error handling, audit logging, monitoring and alerts."
-   ],
-   "tech": [
-    "Snowflake",
-    "SQL",
-    "REST APIs",
-    "Multi-source integration",
-    "Tableau",
-    "SCD",
-    "Data lineage"
-   ]
-  },
-  {
-   "dates": "Oct 2025 to Jan 2026",
-   "title": "Senior Lead Data Engineer",
-   "company": "V4C.ai, for client Kymeta, Pune",
-   "points": [
-    "Led a team of seven data engineers building reusable ELT frameworks.",
-    "Designed cloud-native ingestion and transformation pipelines bringing APIs and structured sources into Snowflake.",
-    "Applied governance: column masking, access policies and standard documentation.",
-    "Contributed to about 20% lower cloud spend and 40% higher deployment reliability."
-   ],
-   "tech": [
-    "Snowflake",
-    "SQL",
-    "Python",
-    "Azure",
-    "Git",
-    "CI/CD"
-   ]
-  },
-  {
-   "dates": "Dec 2024 to Aug 2025",
-   "title": "Solution Consultant",
-   "company": "KetteQ, Noida",
-   "points": [
-    "Built Talend pipelines that bring Salesforce API data into analytics and reporting.",
-    "Kept Tableau dashboards trustworthy with validation and reconciliation checks.",
-    "Cut the daily batch from 45 to 18 minutes and made reporting 25% faster."
-   ],
-   "tech": [
-    "Talend",
-    "Salesforce APIs",
-    "Tableau",
-    "SQL",
-    "Jira",
-    "Git"
-   ]
-  },
-  {
-   "dates": "Dec 2021 to Dec 2024",
-   "title": "Lead Engineer, promoted from Senior Software Engineer",
-   "company": "Kipi.bi, Noida",
-   "points": [
-    "Engineered end-to-end pipelines with Snowflake, Fivetran, dbt, Airflow, Azure, SQL and Python.",
-    "Automated ingestion from databases, SaaS platforms and custom APIs.",
-    "Set dbt standards and code reviews, and put CI/CD in place with GitHub, GitLab and Bitbucket.",
-    "Cut ETL runtime by 60%, to under two hours nightly, and cut data-transfer costs by 25% quarter over quarter."
-   ],
-   "tech": [
-    "Snowflake",
-    "dbt Core and Cloud",
-    "Fivetran",
-    "Airflow",
-    "Matillion",
-    "Azure",
-    "Python"
-   ]
-  },
-  {
-   "dates": "Jan 2020 to Dec 2021",
-   "title": "Software Engineer, promoted from Business Intelligence Intern",
-   "company": "Capgemini India, Chandigarh",
-   "points": [
-    "Developed ETL and BI solutions in Informatica, Tableau, SQL and Python.",
-    "Integrated AWS S3, Azure Data Lake, flat files, Excel, SFTP, APIs and SQL and NoSQL systems into data lakes.",
-    "Monitored scheduled jobs in Control-M and supported production alerting."
-   ],
-   "tech": [
-    "Informatica",
-    "Tableau",
-    "SQL",
-    "Python",
-    "AWS S3",
-    "ADLS Gen2",
-    "Control-M"
-   ]
-  }
- ],
- "clients": [
-  {
-   "name": "Intelsat",
-   "note": "Moved legacy pipelines to Snowflake for near-real-time processing, and added CI/CD for dbt, Airflow and Python."
-  },
-  {
-   "name": "Myriad Genetics",
-   "note": "Centralized regulated data in Snowflake with dbt models, access policies and dynamic data masking."
-  },
-  {
-   "name": "Vena Health",
-   "note": "Automated SaaS and MongoDB ingestion with Fivetran, Snowpark and AWS Lambda for Power BI."
-  },
-  {
-   "name": "Johnson & Johnson",
-   "note": "Built ETL for an APAC data lake on AWS and Redshift, and supported migration and validation."
-  }
- ],
- "projects": [
-  {
-   "title": "Patient-360 governed data platform",
-   "note": "Synthetic patient records become a governed warehouse: duplicate records merged, sensitive fields masked, layered enterprise models.",
-   "stack": "dbt, DuckDB, Splink, Streamlit, Snowflake",
-   "tag": "Snowflake",
-   "status": "Live: stage 1 to 4",
-   "code": "https://github.com/agshivam/patient-360",
-   "live": "https://patient-360.streamlit.app/"
-  },
-  {
-   "title": "Snowflake cost lab",
-   "note": "Measured query and warehouse cost cuts, and a pull request that fails when a change makes queries slower or costlier.",
-   "stack": "Snowflake, dbt, GitHub Actions",
-   "tag": "Snowflake Cost",
-   "status": "Scripts ready, live run next",
-   "code": "https://github.com/agshivam/snowflake-cost-lab",
-   "live": null
-  },
-  {
-   "title": "Chaos-proof pipelines",
-   "note": "A generator breaks the source on purpose. Contracts, reconciliation and alerts catch it.",
-   "stack": "Dagster, dbt tests, Python",
-   "tag": "Reliability",
-   "status": "Code and tests done",
-   "code": "https://github.com/agshivam/chaos-proof-pipelines",
-   "live": "https://app-patient-lakehouse.streamlit.app/"
-  },
-  {
-   "title": "Job Radar",
-   "note": "Job postings from public sources become one clean list, tagged by skill, scored against a resume and sent as alerts.",
-   "stack": "Python, DuckDB, Streamlit, Telegram",
-   "tag": "Reliability",
-   "status": "Code and tests done",
-   "code": "https://github.com/agshivam/job-radar",
-   "live": "https://job-radar-dashboard.streamlit.app/"
-  },
-  {
-   "title": "Portable platform layer",
-   "note": "One dbt project runs on Snowflake and DuckDB, with Terraform and a daily automated run.",
-   "stack": "dbt, DuckDB, Terraform",
-   "tag": "Snowflake",
-   "status": "Verified on DuckDB",
-   "code": "https://github.com/agshivam/portable-data-platform",
-   "live": "https://app-portable-data-platform.streamlit.app/"
-  },
-  {
-   "title": "Patient-360 on Databricks",
-   "note": "The same platform rebuilt as a lakehouse and compared with the Snowflake version.",
-   "stack": "Databricks, Delta, Unity Catalog",
-   "tag": "Databricks",
-   "status": "Code written, run next",
-   "code": "https://github.com/agshivam/patient-360-lakehouse",
-   "live": "https://patient-360-lakehouse.streamlit.app/"
-  }
- ]
+  "email": "agshivam201599@gmail.com",
+  "wa": "https://wa.me/919872907228?text=Hi%20Shivam%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect.",
+  "resume": "Shivam-Agarwal-Resume.pdf",
+  "tools": [
+    {
+      "name": "Snowflake",
+      "lead": "Stored procedures, streams, tasks, MERGE-based incremental loads and SCD 1 and 2 history.",
+      "proof": "Near-real-time pipelines at about 6 million records per hour for Intelsat. Snowflake Core certified.",
+      "used": [
+        "Kipi.ai",
+        "V4C.ai",
+        "Kipi.bi",
+        "Intelsat",
+        "Myriad Genetics"
+      ]
+    },
+    {
+      "name": "dbt",
+      "lead": "Reusable models and macros, team standards, code reviews and CI checks on every change.",
+      "proof": "Set the dbt development standards for the team at Kipi.bi. dbt Fundamentals certified.",
+      "used": [
+        "Kipi.bi",
+        "Myriad Genetics",
+        "Intelsat"
+      ]
+    },
+    {
+      "name": "Fivetran",
+      "lead": "Automated ingestion from databases, SaaS platforms and MongoDB, replacing manual loads.",
+      "proof": "Automated SaaS and MongoDB ingestion for Vena Health. Fivetran Technical certified.",
+      "used": [
+        "Kipi.bi",
+        "Vena Health"
+      ]
+    },
+    {
+      "name": "Python and Airflow",
+      "lead": "API ingestion, Snowpark, Lambda connectors and scheduled orchestration with CI/CD.",
+      "proof": "Introduced CI/CD for dbt, Airflow and Python on the Intelsat platform.",
+      "used": [
+        "Kipi.bi",
+        "Intelsat",
+        "Vena Health"
+      ]
+    },
+    {
+      "name": "AWS and Azure",
+      "lead": "S3, Lambda and Redshift on AWS, and Azure Data Lake Storage for lake-based pipelines.",
+      "proof": "Built ETL for the Johnson & Johnson APAC data lake migration.",
+      "used": [
+        "Capgemini",
+        "Johnson & Johnson",
+        "Kipi.bi"
+      ]
+    },
+    {
+      "name": "Data quality",
+      "lead": "Source-to-target reconciliation, lineage and dependency analysis, and root-cause work on defects.",
+      "proof": "Built SQL checks across sources, warehouse layers, marts and Tableau dashboards.",
+      "used": [
+        "Kipi.ai",
+        "KetteQ"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "dates": "Jan 2026 to now",
+      "title": "Senior Data Engineer",
+      "company": "Kipi.ai, for client GoHealth, remote",
+      "points": [
+        "Maintain the Snowflake pipelines behind analytics and enterprise reporting.",
+        "Harmonize data from several source systems into one consistent model.",
+        "Built SQL reconciliation that finds duplicates and mismatches across sources, warehouse layers, marts and Tableau dashboards.",
+        "Added REST API sources with error handling, audit logging, monitoring and alerts."
+      ],
+      "tech": [
+        "Snowflake",
+        "SQL",
+        "REST APIs",
+        "Multi-source integration",
+        "Tableau",
+        "SCD",
+        "Data lineage"
+      ]
+    },
+    {
+      "dates": "Oct 2025 to Jan 2026",
+      "title": "Senior Lead Data Engineer",
+      "company": "V4C.ai, for client Kymeta, Pune",
+      "points": [
+        "Led a team of seven data engineers building reusable ELT frameworks.",
+        "Designed cloud-native ingestion and transformation pipelines bringing APIs and structured sources into Snowflake.",
+        "Applied governance: column masking, access policies and standard documentation.",
+        "Contributed to about 20% lower cloud spend and 40% higher deployment reliability."
+      ],
+      "tech": [
+        "Snowflake",
+        "SQL",
+        "Python",
+        "Azure",
+        "Git",
+        "CI/CD"
+      ]
+    },
+    {
+      "dates": "Dec 2024 to Aug 2025",
+      "title": "Solution Consultant",
+      "company": "KetteQ, Noida",
+      "points": [
+        "Built Talend pipelines that bring Salesforce API data into analytics and reporting.",
+        "Kept Tableau dashboards trustworthy with validation and reconciliation checks.",
+        "Cut the daily batch from 45 to 18 minutes and made reporting 25% faster."
+      ],
+      "tech": [
+        "Talend",
+        "Salesforce APIs",
+        "Tableau",
+        "SQL",
+        "Jira",
+        "Git"
+      ]
+    },
+    {
+      "dates": "Dec 2021 to Dec 2024",
+      "title": "Lead Engineer, promoted from Senior Software Engineer",
+      "company": "Kipi.bi, Noida",
+      "points": [
+        "Engineered end-to-end pipelines with Snowflake, Fivetran, dbt, Airflow, Azure, SQL and Python.",
+        "Automated ingestion from databases, SaaS platforms and custom APIs.",
+        "Set dbt standards and code reviews, and put CI/CD in place with GitHub, GitLab and Bitbucket.",
+        "Cut ETL runtime by 60%, to under two hours nightly, and cut data-transfer costs by 25% quarter over quarter."
+      ],
+      "tech": [
+        "Snowflake",
+        "dbt Core and Cloud",
+        "Fivetran",
+        "Airflow",
+        "Matillion",
+        "Azure",
+        "Python"
+      ]
+    },
+    {
+      "dates": "Jan 2020 to Dec 2021",
+      "title": "Software Engineer, promoted from Business Intelligence Intern",
+      "company": "Capgemini India, Chandigarh",
+      "points": [
+        "Developed ETL and BI solutions in Informatica, Tableau, SQL and Python.",
+        "Integrated AWS S3, Azure Data Lake, flat files, Excel, SFTP, APIs and SQL and NoSQL systems into data lakes.",
+        "Monitored scheduled jobs in Control-M and supported production alerting."
+      ],
+      "tech": [
+        "Informatica",
+        "Tableau",
+        "SQL",
+        "Python",
+        "AWS S3",
+        "ADLS Gen2",
+        "Control-M"
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "name": "Intelsat",
+      "note": "Moved legacy pipelines to Snowflake for near-real-time processing, and added CI/CD for dbt, Airflow and Python."
+    },
+    {
+      "name": "Myriad Genetics",
+      "note": "Centralized regulated data in Snowflake with dbt models, access policies and dynamic data masking."
+    },
+    {
+      "name": "Vena Health",
+      "note": "Automated SaaS and MongoDB ingestion with Fivetran, Snowpark and AWS Lambda for Power BI."
+    },
+    {
+      "name": "Johnson & Johnson",
+      "note": "Built ETL for an APAC data lake on AWS and Redshift, and supported migration and validation."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Data Spend Copilot",
+      "note": "Snowflake, Fivetran, dbt and Cortex AI spend in one governed view: dbt Semantic Layer metrics, an MCP server so AI agents can explain cost changes, and a next-12-month forecast with what-if levers.",
+      "stack": "dbt Semantic Layer, MCP, Snowflake, DuckDB, Streamlit",
+      "tag": "AI FinOps",
+      "status": "Live",
+      "code": "https://github.com/agshivam/data-spend-copilot",
+      "live": "https://data-spend-copilot.streamlit.app/",
+      "shot": "data-spend-copilot"
+    },
+    {
+      "title": "Patient-360 governed data platform",
+      "note": "Synthetic patient records become a governed warehouse: duplicate records merged, sensitive fields masked, layered enterprise models.",
+      "stack": "dbt, DuckDB, Splink, Streamlit, Snowflake",
+      "tag": "Snowflake",
+      "status": "Live: stage 1 to 4",
+      "code": "https://github.com/agshivam/patient-360",
+      "live": "https://patient-360.streamlit.app/",
+      "shot": "patient-360"
+    },
+    {
+      "title": "Snowflake cost lab",
+      "note": "Measured query and warehouse cost cuts, and a pull request that fails when a change makes queries slower or costlier.",
+      "stack": "Snowflake, dbt, GitHub Actions",
+      "tag": "Snowflake Cost",
+      "status": "Scripts ready, live run next",
+      "code": "https://github.com/agshivam/snowflake-cost-lab",
+      "live": null,
+      "shot": "costlab"
+    },
+    {
+      "title": "Chaos-proof pipelines",
+      "note": "A generator breaks the source on purpose. Contracts, reconciliation and alerts catch it.",
+      "stack": "Dagster, dbt tests, Python",
+      "tag": "Reliability",
+      "status": "Code and tests done",
+      "code": "https://github.com/agshivam/chaos-proof-pipelines",
+      "live": "https://app-patient-lakehouse.streamlit.app/",
+      "shot": "chaos-proof-pipelines"
+    },
+    {
+      "title": "Job Radar",
+      "note": "Job postings from public sources become one clean list, tagged by skill, scored against a resume and sent as alerts.",
+      "stack": "Python, DuckDB, Streamlit, Telegram",
+      "tag": "Reliability",
+      "status": "Code and tests done",
+      "code": "https://github.com/agshivam/job-radar",
+      "live": "https://job-radar-dashboard.streamlit.app/",
+      "shot": "job-radar"
+    },
+    {
+      "title": "Portable platform layer",
+      "note": "One dbt project runs on Snowflake and DuckDB, with Terraform and a daily automated run.",
+      "stack": "dbt, DuckDB, Terraform",
+      "tag": "Snowflake",
+      "status": "Verified on DuckDB",
+      "code": "https://github.com/agshivam/portable-data-platform",
+      "live": "https://app-portable-data-platform.streamlit.app/",
+      "shot": "portable-data-platform"
+    },
+    {
+      "title": "Patient-360 on Databricks",
+      "note": "The same platform rebuilt as a lakehouse and compared with the Snowflake version.",
+      "stack": "Databricks, Delta, Unity Catalog",
+      "tag": "Databricks",
+      "status": "Code written, run next",
+      "code": "https://github.com/agshivam/patient-360-lakehouse",
+      "live": "https://patient-360-lakehouse.streamlit.app/",
+      "shot": "patient-360-lakehouse"
+    }
+  ]
 }
