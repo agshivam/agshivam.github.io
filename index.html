@@ -140,6 +140,10 @@ h2{font-size:clamp(30px,4vw,40px)}
 a.crow:hover .arr{transform:translateX(6px)}a.crow:hover .lbl{color:#1F6F8B}
 .copy{font-family:inherit;font-size:14px;font-weight:500;padding:8px 14px;border-radius:8px;border:1px solid #B8C0CC;background:#fff;color:#0F1B2D;cursor:pointer;flex:0 0 auto}
 .mail{color:#0F1B2D;text-decoration:none}.mail:hover{color:#1F6F8B}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #E1E5EB}
+.stats[hidden]{display:none}.stats div{display:flex;flex-direction:column;gap:2px}.stats b{font-size:26px;font-weight:600;color:#0F1B2D}.stats span{font-size:14px;color:#5B6778}
+.stats p{grid-column:1/-1;margin:0;font-size:13px;color:#5B6778}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
 footer{padding:32px 0 64px;border-top:1px solid #E1E5EB;font-size:14px;color:#5B6778;line-height:1.6;margin-top:48px}
 @media (max-width:640px){.dates{flex-basis:100%}.role{gap:14px}header.hero{padding:48px 0 48px;gap:36px}.big{font-size:44px}.res1,.res1:first-child,.res1:last-child{padding:24px 12px 24px 0}}
 @media (prefers-reduced-motion:reduce){.in,.cnt,.orb,.pane{animation:none}html{scroll-behavior:auto}.btn,.pcard,.banner,.rpanel{transition:none}}
@@ -149,7 +153,7 @@ footer{padding:32px 0 64px;border-top:1px solid #E1E5EB;font-size:14px;color:#5B
 <div style="position:relative;overflow:hidden">
 <div class="orb o1"></div><div class="orb o2"></div>
 <nav class="top"><div class="in2"><span class="brand">Shivam Agarwal</span>
-<div class="nav"><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a class="res" href="Shivam-Agarwal-Resume.pdf" download>Resume</a></div></div></nav>
+<div class="nav"><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a class="res" href="Shivam-Agarwal-Resume.pdf" download data-gc="resume-download">Resume</a></div></div></nav>
 <main class="wrap">
 <header class="hero">
 <div class="hl">
@@ -209,15 +213,18 @@ footer{padding:32px 0 64px;border-top:1px solid #E1E5EB;font-size:14px;color:#5B
 <div id="thanks" class="done" hidden><b>Message sent</b><span>Thank you. I'll reply to the email you provided.</span></div>
 </div>
 <div class="clist">
-<div class="crow"><span class="k"><small>Email</small><a class="lbl mail" href="mailto:agshivam201599@gmail.com?subject=Opportunity%20for%20Shivam">agshivam201599@gmail.com</a></span><button id="copy" class="copy" type="button">Copy</button></div>
-<a class="crow" href="https://wa.me/919872907228?text=Hi%20Shivam%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." rel="noopener"><span class="k"><small>WhatsApp</small><span class="lbl">Message me on WhatsApp</span></span><span class="arr" aria-hidden="true">&#8594;</span></a>
-<a class="crow" href="Shivam-Agarwal-Resume.pdf" download><span class="k"><small>Resume</small><span class="lbl">Download as PDF</span></span><span class="arr" aria-hidden="true">&#8594;</span></a>
+<div class="crow"><span class="k"><small>Email</small><a class="lbl mail" data-gc="email-click" href="mailto:agshivam201599@gmail.com?subject=Opportunity%20for%20Shivam">agshivam201599@gmail.com</a></span><button id="copy" class="copy" type="button">Copy</button></div>
+<a class="crow" data-gc="whatsapp-click" href="https://wa.me/919872907228?text=Hi%20Shivam%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." rel="noopener"><span class="k"><small>WhatsApp</small><span class="lbl">Message me on WhatsApp</span></span><span class="arr" aria-hidden="true">&#8594;</span></a>
+<a class="crow" data-gc="resume-download" href="Shivam-Agarwal-Resume.pdf" download><span class="k"><small>Resume</small><span class="lbl">Download as PDF</span></span><span class="arr" aria-hidden="true">&#8594;</span></a>
 <a class="crow" href="https://www.linkedin.com/in/shivamagarwal-/" rel="noopener"><span class="k"><small>LinkedIn</small><span class="lbl">Connect with me</span></span><span class="arr" aria-hidden="true">&#8594;</span></a>
 <a class="crow" href="https://github.com/agshivam" rel="noopener"><span class="k"><small>GitHub</small><span class="lbl">See my code</span></span><span class="arr" aria-hidden="true">&#8594;</span></a>
 <a class="crow" href="https://x.com/deyogiShivamAg" rel="noopener"><span class="k"><small>X</small><span class="lbl">Follow me</span></span><span class="arr" aria-hidden="true">&#8594;</span></a>
 </div>
 </div>
 </section>
+<div id="stats" class="stats" hidden aria-label="Site activity">
+<div><b id="s-vis">0</b><span>Unique visitors</span></div><div><b id="s-res">0</b><span>Resume downloads</span></div><div><b id="s-mail">0</b><span>Emails and messages</span></div><div><b id="s-wa">0</b><span>WhatsApp chats opened</span></div>
+<p>Counted privately with no cookies. Emails and WhatsApp are clicks and form sends, not confirmed messages.</p></div>
 <footer>All projects on this site use public or synthetic data. No employer data is used.</footer>
 </main>
 </div>
@@ -245,6 +252,24 @@ footer{padding:32px 0 64px;border-top:1px solid #E1E5EB;font-size:14px;color:#5B
   var cb=$('#copy');if(cb)cb.addEventListener('click',function(){
     try{navigator.clipboard.writeText(TO)}catch(e){}
     cb.textContent='Copied';setTimeout(function(){cb.textContent='Copy'},2000)});
+
+  // privacy-friendly counting (GoatCounter, no cookies). Only active when a code is set at build time.
+  var GC="";
+  function track(name){if(!GC)return;var n=0,t=setInterval(function(){
+    if(window.goatcounter&&window.goatcounter.count){clearInterval(t);window.goatcounter.count({path:name,title:name,event:true})}
+    else if(++n>40)clearInterval(t)},100)}
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-gc]');if(a)track(a.getAttribute('data-gc'))});
+  function num(path){var u='https://'+GC+'.goatcounter.com/counter/';
+    return fetch(u+encodeURIComponent(path)+'.json').then(function(r){if(!r.ok)throw 0;return r.json()})
+      .then(function(d){return parseInt(String(d.count).replace(/[^0-9]/g,''),10)||0})
+      .catch(function(){return path.charAt(0)==='/'?null:fetch(u+encodeURIComponent('/'+path)+'.json').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){return parseInt(String(d.count).replace(/[^0-9]/g,''),10)||0}).catch(function(){return 0})})}
+  var st=$('#stats');
+  if(GC&&st){Promise.all([num('/'),num('resume-download'),num('email-click'),num('form-sent'),num('whatsapp-click')]).then(function(v){
+    if(v[0]===null)return;
+    var f=function(x){return (x||0).toLocaleString('en-IN')};
+    $('#s-vis').textContent=f(v[0]);$('#s-res').textContent=f(v[1]);$('#s-mail').textContent=f((v[2]||0)+(v[3]||0));$('#s-wa').textContent=f(v[4]);
+    st.hidden=false})}
+
   // contact form
   var form=$('#cform');
   if(form)form.addEventListener('submit',function(e){
@@ -259,11 +284,12 @@ footer{padding:32px 0 64px;border-top:1px solid #E1E5EB;font-size:14px;color:#5B
     fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify({access_key:KEY,subject:'Portfolio message from '+name,from_name:'Portfolio site',name:name,email:mail,message:msg})})
     .then(function(r){return r.json()}).then(function(d){
-      if(d.success){form.style.display='none';$('#thanks').hidden=false}else{throw new Error(d.message||'failed')}})
+      if(d.success){track('form-sent');form.style.display='none';$('#thanks').hidden=false}else{throw new Error(d.message||'failed')}})
     .catch(function(){btn.disabled=false;btn.textContent='Send message';note.className='msg err';
       note.innerHTML='Could not send. Please email <a href="mailto:'+TO+'">'+TO+'</a> directly.'});
   });
 })();
 </script>
+
 </body>
 </html>
