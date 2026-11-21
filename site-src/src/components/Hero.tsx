@@ -15,7 +15,7 @@ function Portrait() {
         (e.currentTarget.firstChild as HTMLElement).style.transform = `rotateY(${x * 14}deg) rotateX(${-y * 10}deg)`;
       }}
       onPointerLeave={(e) => { (e.currentTarget.firstChild as HTMLElement).style.transform = ""; }}>
-      <img src="portrait-v2.png" alt="Shivam Agarwal" onError={() => setFailed(true)} className="w-full h-auto block select-none"
+      <img src="portrait-v3.png" alt="Shivam Agarwal" onError={() => setFailed(true)} className="w-full h-auto block select-none"
         style={{ transition: "transform .25s ease-out", filter: "drop-shadow(0 30px 40px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(120,130,255,.25))", transformStyle: "preserve-3d" }} draggable={false} />
     </div>
   );
