@@ -254,7 +254,7 @@ footer{padding:32px 0 64px;border-top:1px solid #E1E5EB;font-size:14px;color:#5B
     cb.textContent='Copied';setTimeout(function(){cb.textContent='Copy'},2000)});
 
   // own counter: a small Cloudflare Worker in my account. No cookies; a random id in this browser counts unique visitors.
-  var CT="".replace(/[/]$/,"");
+  var CT="https://portfolio-counter.agshivam201599.workers.dev".replace(/[/]$/,"");
   function vid(){try{var v=localStorage.getItem('sa_vid');if(!v){v=Math.random().toString(36).slice(2,12)+Date.now().toString(36);localStorage.setItem('sa_vid',v)}return v}catch(e){return 'anon'+Math.random().toString(36).slice(2,12)}}
   function track(name){if(!CT)return;try{fetch(CT+'/hit',{method:'POST',keepalive:true,body:JSON.stringify({id:vid(),e:name})}).catch(function(){})}catch(e){}}
   document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-gc]');if(a)track(a.getAttribute('data-gc'))});
