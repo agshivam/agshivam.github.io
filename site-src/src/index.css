@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body,#root{background:#0C0C0C}
+body{font-family:'Kanit',sans-serif;color:#D7E2EA;-webkit-font-smoothing:antialiased}
+.hero-heading{background:linear-gradient(180deg,#646973 0%,#BBCCD7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #BBCCD7;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.field{width:100%;background:transparent;border:1px solid rgba(215,226,234,.3);border-radius:20px;padding:14px 18px;color:#D7E2EA;font-size:16px;font-family:inherit}
+.field::placeholder{color:rgba(215,226,234,.45)}
