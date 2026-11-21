@@ -228,22 +228,17 @@ JS = """
     try{navigator.clipboard.writeText(TO)}catch(e){}
     cb.textContent='Copied';setTimeout(function(){cb.textContent='Copy'},2000)});
 
-  // privacy-friendly counting (GoatCounter, no cookies). Only active when a code is set at build time.
-  var GC="__GC__";
-  function track(name){if(!GC)return;var n=0,t=setInterval(function(){
-    if(window.goatcounter&&window.goatcounter.count){clearInterval(t);window.goatcounter.count({path:name,title:name,event:true})}
-    else if(++n>40)clearInterval(t)},100)}
+  // own counter: a small Cloudflare Worker in my account. No cookies; a random id in this browser counts unique visitors.
+  var CT="__GC__".replace(/[/]$/,"");
+  function vid(){try{var v=localStorage.getItem('sa_vid');if(!v){v=Math.random().toString(36).slice(2,12)+Date.now().toString(36);localStorage.setItem('sa_vid',v)}return v}catch(e){return 'anon'+Math.random().toString(36).slice(2,12)}}
+  function track(name){if(!CT)return;try{fetch(CT+'/hit',{method:'POST',keepalive:true,body:JSON.stringify({id:vid(),e:name})}).catch(function(){})}catch(e){}}
   document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-gc]');if(a)track(a.getAttribute('data-gc'))});
-  function num(path){var u='https://'+GC+'.goatcounter.com/counter/';
-    return fetch(u+encodeURIComponent(path)+'.json').then(function(r){if(!r.ok)throw 0;return r.json()})
-      .then(function(d){return parseInt(String(d.count).replace(/[^0-9]/g,''),10)||0})
-      .catch(function(){return path.charAt(0)==='/'?null:fetch(u+encodeURIComponent('/'+path)+'.json').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){return parseInt(String(d.count).replace(/[^0-9]/g,''),10)||0}).catch(function(){return 0})})}
   var st=$('#stats');
-  if(GC&&st){Promise.all([num('/'),num('resume-download'),num('email-click'),num('form-sent'),num('whatsapp-click')]).then(function(v){
-    if(v[0]===null)return;
-    var f=function(x){return (x||0).toLocaleString('en-IN')};
-    $('#s-vis').textContent=f(v[0]);$('#s-res').textContent=f(v[1]);$('#s-mail').textContent=f((v[2]||0)+(v[3]||0));$('#s-wa').textContent=f(v[4]);
-    st.hidden=false})}
+  if(CT){track('view');
+    fetch(CT+'/stats').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+      var f=function(x){return (x||0).toLocaleString('en-IN')};
+      $('#s-vis').textContent=f(d.visitors);$('#s-res').textContent=f(d.resume);$('#s-mail').textContent=f((d.mail||0)+(d.form||0));$('#s-wa').textContent=f(d.wa);
+      if(st)st.hidden=false}).catch(function(){})}
 
   // contact form
   var form=$('#cform');
@@ -271,7 +266,7 @@ def build(key="__WEB3FORMS_KEY__", gc=""):
     ld = json.dumps({"@context":"https://schema.org","@type":"Person","name":"Shivam Agarwal","jobTitle":"Senior Data Engineer","url":SITE,
         "sameAs":["https://www.linkedin.com/in/shivamagarwal-/","https://github.com/agshivam","https://x.com/deyogiShivamAg"],
         "knowsAbout":["Snowflake","dbt","Fivetran","Python","Airflow","AWS","Data engineering"]})
-    gc_tag = ('<script data-goatcounter="https://%s.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>' % gc) if gc else ""
+    gc_tag = ""
     fav = "data:image/svg+xml," + "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F1B2D'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='30' font-weight='700' fill='%237FD3E6' text-anchor='middle'%3ESA%3C/text%3E%3C/svg%3E"
     desc = "Senior data engineer with six years building Snowflake, dbt and Fivetran platforms across SaaS, telecom and enterprise clients. Projects, journey, resume and contact."
     return f'''<!doctype html>
@@ -360,7 +355,7 @@ def build(key="__WEB3FORMS_KEY__", gc=""):
 </section>
 <div id="stats" class="stats" hidden aria-label="Site activity">
 <div><b id="s-vis">0</b><span>Unique visitors</span></div><div><b id="s-res">0</b><span>Resume downloads</span></div><div><b id="s-mail">0</b><span>Emails and messages</span></div><div><b id="s-wa">0</b><span>WhatsApp chats opened</span></div>
-<p>Counted privately with no cookies. Emails and WhatsApp are clicks and form sends, not confirmed messages.</p></div>
+<p>Counted by a small service I run myself, with no cookies. Emails and WhatsApp are clicks and form sends, not confirmed messages.</p></div>
 <footer>All projects on this site use public or synthetic data. No employer data is used.</footer>
 </main>
 </div>

@@ -39,7 +39,6 @@ Replace `Shivam-Agarwal-Resume.pdf` with the new file, keeping the same name, an
 - Click the resume, WhatsApp and email links.
 - Send yourself one test message through the form.
 
-## Visitor and click counter (GoatCounter)
-The site can show unique visitors, resume downloads, emails and WhatsApp clicks. It stays off until you give it a GoatCounter code:
-`python tools/build.py <WEB3FORMS_KEY> <GOATCOUNTER_CODE>`
-Setup: sign up free at goatcounter.com, pick a code (your stats live at `<code>.goatcounter.com`), then Settings, Site, tick "Allow adding visitor counts on your website". Counts are cookie-free. Email and WhatsApp numbers are clicks plus contact-form sends, not confirmed messages.
+## Visitor and click counter (your own, free)
+Counts unique visitors, resume downloads, emails (link clicks plus contact-form sends) and WhatsApp clicks. The code is in `tools/counter-worker/`; the data stays in your own Cloudflare account. It stays off until you set it up, see `tools/counter-worker/README.md`.
+After setup, rebuild with the Worker URL: `python tools/build.py <WEB3FORMS_KEY> https://<your-worker>.workers.dev`

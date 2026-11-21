@@ -224,7 +224,7 @@ footer{padding:32px 0 64px;border-top:1px solid #E1E5EB;font-size:14px;color:#5B
 </section>
 <div id="stats" class="stats" hidden aria-label="Site activity">
 <div><b id="s-vis">0</b><span>Unique visitors</span></div><div><b id="s-res">0</b><span>Resume downloads</span></div><div><b id="s-mail">0</b><span>Emails and messages</span></div><div><b id="s-wa">0</b><span>WhatsApp chats opened</span></div>
-<p>Counted privately with no cookies. Emails and WhatsApp are clicks and form sends, not confirmed messages.</p></div>
+<p>Counted by a small service I run myself, with no cookies. Emails and WhatsApp are clicks and form sends, not confirmed messages.</p></div>
 <footer>All projects on this site use public or synthetic data. No employer data is used.</footer>
 </main>
 </div>
@@ -253,22 +253,17 @@ footer{padding:32px 0 64px;border-top:1px solid #E1E5EB;font-size:14px;color:#5B
     try{navigator.clipboard.writeText(TO)}catch(e){}
     cb.textContent='Copied';setTimeout(function(){cb.textContent='Copy'},2000)});
 
-  // privacy-friendly counting (GoatCounter, no cookies). Only active when a code is set at build time.
-  var GC="";
-  function track(name){if(!GC)return;var n=0,t=setInterval(function(){
-    if(window.goatcounter&&window.goatcounter.count){clearInterval(t);window.goatcounter.count({path:name,title:name,event:true})}
-    else if(++n>40)clearInterval(t)},100)}
+  // own counter: a small Cloudflare Worker in my account. No cookies; a random id in this browser counts unique visitors.
+  var CT="".replace(/[/]$/,"");
+  function vid(){try{var v=localStorage.getItem('sa_vid');if(!v){v=Math.random().toString(36).slice(2,12)+Date.now().toString(36);localStorage.setItem('sa_vid',v)}return v}catch(e){return 'anon'+Math.random().toString(36).slice(2,12)}}
+  function track(name){if(!CT)return;try{fetch(CT+'/hit',{method:'POST',keepalive:true,body:JSON.stringify({id:vid(),e:name})}).catch(function(){})}catch(e){}}
   document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-gc]');if(a)track(a.getAttribute('data-gc'))});
-  function num(path){var u='https://'+GC+'.goatcounter.com/counter/';
-    return fetch(u+encodeURIComponent(path)+'.json').then(function(r){if(!r.ok)throw 0;return r.json()})
-      .then(function(d){return parseInt(String(d.count).replace(/[^0-9]/g,''),10)||0})
-      .catch(function(){return path.charAt(0)==='/'?null:fetch(u+encodeURIComponent('/'+path)+'.json').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){return parseInt(String(d.count).replace(/[^0-9]/g,''),10)||0}).catch(function(){return 0})})}
   var st=$('#stats');
-  if(GC&&st){Promise.all([num('/'),num('resume-download'),num('email-click'),num('form-sent'),num('whatsapp-click')]).then(function(v){
-    if(v[0]===null)return;
-    var f=function(x){return (x||0).toLocaleString('en-IN')};
-    $('#s-vis').textContent=f(v[0]);$('#s-res').textContent=f(v[1]);$('#s-mail').textContent=f((v[2]||0)+(v[3]||0));$('#s-wa').textContent=f(v[4]);
-    st.hidden=false})}
+  if(CT){track('view');
+    fetch(CT+'/stats').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+      var f=function(x){return (x||0).toLocaleString('en-IN')};
+      $('#s-vis').textContent=f(d.visitors);$('#s-res').textContent=f(d.resume);$('#s-mail').textContent=f((d.mail||0)+(d.form||0));$('#s-wa').textContent=f(d.wa);
+      if(st)st.hidden=false}).catch(function(){})}
 
   // contact form
   var form=$('#cform');
