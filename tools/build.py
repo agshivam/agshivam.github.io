@@ -30,7 +30,7 @@ clients = [
 ]
 # title, note, stack, tags, status, code, live
 projects = [
- ("Patient-360 healthcare platform","Synthetic hospital records become a governed warehouse: duplicate patients merged, names masked, Epic-style layers.","dbt, DuckDB, Splink, Streamlit, Snowflake","Snowflake","Live: stage 1 to 4","https://github.com/agshivam/patient-360",LIVE),
+ ("Patient-360 governed data platform","Synthetic patient records become a governed warehouse: duplicate records merged, sensitive fields masked, layered enterprise models.","dbt, DuckDB, Splink, Streamlit, Snowflake","Snowflake","Live: stage 1 to 4","https://github.com/agshivam/patient-360",LIVE),
  ("Snowflake cost lab","Measured query and warehouse cost cuts, and a pull request that fails when a change makes queries slower or costlier.","Snowflake, dbt, GitHub Actions","Snowflake Cost","Scripts ready, live run next","https://github.com/agshivam/snowflake-cost-lab",None),
  ("Chaos-proof pipelines","A generator breaks the source on purpose. Contracts, reconciliation and alerts catch it.","Dagster, dbt tests, Python","Reliability","Code and tests done","https://github.com/agshivam/chaos-proof-pipelines","https://app-patient-lakehouse.streamlit.app/"),
  ("Job Radar","Job postings from public sources become one clean list, tagged by skill, scored against a resume and sent as alerts.","Python, DuckDB, Streamlit, Telegram","Reliability","Code and tests done","https://github.com/agshivam/job-radar","https://job-radar-dashboard.streamlit.app/"),
@@ -250,7 +250,7 @@ def build(key="__WEB3FORMS_KEY__"):
         "sameAs":["https://www.linkedin.com/in/shivamagarwal-/","https://github.com/agshivam","https://x.com/deyogiShivamAg"],
         "knowsAbout":["Snowflake","dbt","Fivetran","Python","Airflow","AWS","Data engineering"]})
     fav = "data:image/svg+xml," + "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F1B2D'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='30' font-weight='700' fill='%237FD3E6' text-anchor='middle'%3ESA%3C/text%3E%3C/svg%3E"
-    desc = "Senior data engineer with six years building Snowflake, dbt and Fivetran platforms across healthcare, SaaS and telecom. Projects, journey, resume and contact."
+    desc = "Senior data engineer with six years building Snowflake, dbt and Fivetran platforms across SaaS, telecom and enterprise clients. Projects, journey, resume and contact."
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -282,7 +282,7 @@ def build(key="__WEB3FORMS_KEY__"):
 <div class="hl">
 <span class="where in d1">Shivam Agarwal, Gurugram, India</span>
 <h1 class="in d2">Senior data engineer, building Snowflake platforms that last.</h1>
-<p class="sub in d3">Six years designing and tuning cloud data pipelines, warehouses and analytics models across healthcare, SaaS and telecom.</p>
+<p class="sub in d3">Six years designing and tuning cloud data pipelines, warehouses and analytics models across SaaS, telecom and enterprise clients.</p>
 <div class="row in d4"><a class="btn dark" href="{RESUME}" download>Download resume</a><a class="btn light" href="#contact">Get in touch</a></div>
 <div class="links in d5"><a href="https://www.linkedin.com/in/shivamagarwal-/" rel="me noopener">LinkedIn</a><a href="https://github.com/agshivam" rel="me noopener">GitHub</a><a href="https://x.com/deyogiShivamAg" rel="me noopener">X</a></div>
 </div>
@@ -309,7 +309,7 @@ def build(key="__WEB3FORMS_KEY__"):
 <div class="sh"><h2>Projects</h2><p>Six platforms built on public or synthetic data. Each has its code, a short decision record, a live report and a walkthrough video. Finished ones are marked live.</p></div>
 <div class="row" role="group" aria-label="Filter projects" style="gap:8px">{filter_html()}</div>
 <div class="grid">{proj_html()}</div>
-<a class="banner" href="{LIVE}" rel="noopener"><span class="bt"><b>Live Patient-360 report</b><span><span>Synthetic hospital data: admissions, readmissions, data quality checks, duplicate patients.</span></span></span><span class="go">Open report &#8594;</span></a>
+<a class="banner" href="{LIVE}" rel="noopener"><span class="bt"><b>Live Patient-360 report</b><span><span>Synthetic records: encounters, readmissions, data quality checks, duplicate-record merge.</span></span></span><span class="go">Open report &#8594;</span></a>
 </section>
 <section id="contact" class="sec" style="padding-bottom:56px">
 <div class="sh"><h2>Let's talk</h2><p>Hiring for a data role, or have a platform to build? Send a message and I'll reply by email.</p></div>
