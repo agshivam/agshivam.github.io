@@ -16,7 +16,7 @@ tools = [
  ("Data quality","Source-to-target reconciliation, lineage and dependency analysis, and root-cause work on defects.","Built SQL checks across sources, warehouse layers, marts and Tableau dashboards.",["Kipi.ai","KetteQ"]),
 ]
 roles = [
- ("Jan 2026 to now","Senior Data Engineer","Kipi.ai, for client GoHealth, remote",["Maintain the Snowflake pipelines behind healthcare analytics and enterprise reporting.","Harmonize data from several EMR systems, including Epic and eClinicalWorks.","Built SQL reconciliation that finds duplicates and mismatches across sources, warehouse layers, marts and Tableau dashboards.","Added REST API sources with error handling, audit logging, monitoring and alerts."],["Snowflake","SQL","REST APIs","Epic","eClinicalWorks","Tableau","SCD","Data lineage"]),
+ ("Jan 2026 to now","Senior Data Engineer","Kipi.ai, for client GoHealth, remote",["Maintain the Snowflake pipelines behind analytics and enterprise reporting.","Harmonize data from several source systems into one consistent model.","Built SQL reconciliation that finds duplicates and mismatches across sources, warehouse layers, marts and Tableau dashboards.","Added REST API sources with error handling, audit logging, monitoring and alerts."],["Snowflake","SQL","REST APIs","Multi-source integration","Tableau","SCD","Data lineage"]),
  ("Oct 2025 to Jan 2026","Senior Lead Data Engineer","V4C.ai, for client Kymeta, Pune",["Led a team of seven data engineers building reusable ELT frameworks.","Designed cloud-native ingestion and transformation pipelines bringing APIs and structured sources into Snowflake.","Applied governance: column masking, access policies and standard documentation.","Contributed to about 20% lower cloud spend and 40% higher deployment reliability."],["Snowflake","SQL","Python","Azure","Git","CI/CD"]),
  ("Dec 2024 to Aug 2025","Solution Consultant","KetteQ, Noida",["Built Talend pipelines that bring Salesforce API data into analytics and reporting.","Kept Tableau dashboards trustworthy with validation and reconciliation checks.","Cut the daily batch from 45 to 18 minutes and made reporting 25% faster."],["Talend","Salesforce APIs","Tableau","SQL","Jira","Git"]),
  ("Dec 2021 to Dec 2024","Lead Engineer, promoted from Senior Software Engineer","Kipi.bi, Noida",["Engineered end-to-end pipelines with Snowflake, Fivetran, dbt, Airflow, Azure, SQL and Python.","Automated ingestion from databases, SaaS platforms and custom APIs.","Set dbt standards and code reviews, and put CI/CD in place with GitHub, GitLab and Bitbucket.","Cut ETL runtime by 60%, to under two hours nightly, and cut data-transfer costs by 25% quarter over quarter."],["Snowflake","dbt Core and Cloud","Fivetran","Airflow","Matillion","Azure","Python"]),
@@ -24,7 +24,7 @@ roles = [
 ]
 clients = [
  ("Intelsat","Moved legacy pipelines to Snowflake for near-real-time processing, and added CI/CD for dbt, Airflow and Python."),
- ("Myriad Genetics","Centralized healthcare data in Snowflake under HIPAA, with dbt models and dynamic data masking."),
+ ("Myriad Genetics","Centralized regulated data in Snowflake with dbt models, access policies and dynamic data masking."),
  ("Vena Health","Automated SaaS and MongoDB ingestion with Fivetran, Snowpark and AWS Lambda for Power BI."),
  ("Johnson & Johnson","Built ETL for an APAC data lake on AWS and Redshift, and supported migration and validation."),
 ]
