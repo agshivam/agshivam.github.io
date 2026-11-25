@@ -250,6 +250,16 @@
       "code": "https://github.com/agshivam/patient-360-lakehouse",
       "live": "https://patient-360-lakehouse.streamlit.app/",
       "shot": "patient-360-lakehouse"
+    },
+    {
+      "title": "YouTube Hindi & English Transcriber",
+      "note": "Paste a YouTube link, get a clean transcript, timestamps and SRT subtitles. Uses YouTube's own Hindi/English captions when they exist, and falls back to Whisper AI speech-to-text when they don't.",
+      "stack": "Python, Streamlit, yt-dlp, faster-whisper",
+      "tag": "AI Tool",
+      "status": "Live",
+      "code": "https://github.com/agshivam/youtube-transcriber",
+      "live": "https://yt-transcriber.streamlit.app/",
+      "shot": "yt-transcriber"
     }
   ]
 }
