@@ -258,7 +258,7 @@
       "tag": "AI Tool",
       "status": "Live",
       "code": "https://github.com/agshivam/youtube-transcriber",
-      "live": "https://yt-transcriber.streamlit.app/",
+      "live": "https://youtube-transcript-live.streamlit.app/",
       "shot": "yt-transcriber"
     }
   ]
